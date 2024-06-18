@@ -1,11 +1,15 @@
 # 使用指定的基础镜像
-FROM cikeyqi/unidbg-fetch-qsign-docker:latest
+FROM openjdk:22-slim-bookworm
 
+ENV TZ Asia/Shanghai
 # 设置工作目录
 WORKDIR /app
 
 # 复制本地文件到工作目录
 COPY main /app
+COPY txlib /app/txlib
+COPY lib /app/lib
+COPY bin /app/bin
 
 RUN apt-get update && \
     apt-get install -y tzdata wget && \
