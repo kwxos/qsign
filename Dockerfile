@@ -1,5 +1,5 @@
 # 使用指定的基础镜像
-FROM lanqian528/chat2api:latest
+FROM cikeyqi/unidbg-fetch-qsign-docker:latest
 
 # 设置工作目录
 WORKDIR /app
