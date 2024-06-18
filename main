@@ -16,6 +16,6 @@ fi
 
 sleep 3
 
-bash bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION
+bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.96 2>&1 &
 
 tail -f /dev/null
