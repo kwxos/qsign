@@ -16,6 +16,6 @@ fi
 
 sleep 3
 
-python app.py 2>&1 &
+bash bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION
 
 tail -f /dev/null
