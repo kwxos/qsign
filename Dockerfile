@@ -16,7 +16,7 @@ RUN apt-get update && \
 RUN chmod a+x main
 
 # 暴露端口
-EXPOSE 5005
+EXPOSE 8080
 
 # 设置容器启动命令
 CMD ["./main"]
