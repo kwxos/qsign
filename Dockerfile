@@ -7,7 +7,7 @@ ENV TZ Asia/Shanghai
 WORKDIR /app
 
 # 复制本地文件到工作目录
-# COPY . /app
+COPY main /app
 
 # 更新系统并安装必要的软件包
 RUN apt-get update && \
