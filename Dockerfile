@@ -3,7 +3,7 @@ FROM cikeyqi/unidbg-fetch-qsign-docker:latest
 
 # 设置时区为 Asia/Shanghai
 ENV TZ Asia/Shanghai
-ENV TXLIB_VERSION=8.9.96
+ENV TXLIB_VERSION=$TXLIB_VERSION
 # 设置工作目录
 WORKDIR /app
 
