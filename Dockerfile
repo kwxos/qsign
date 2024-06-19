@@ -3,7 +3,6 @@ FROM cikeyqi/unidbg-fetch-qsign-docker:latest
 
 # 设置时区为 Asia/Shanghai
 ENV TZ Asia/Shanghai
-ENV TXLIB_VERSION=$TXLIB_VERSION
 # 设置工作目录
 WORKDIR /app
 
@@ -22,5 +21,5 @@ EXPOSE 8080
 
 # 设置容器启动命令，执行 /app/main 脚本
 
-ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
-# ENTRYPOINT ["/bin/bash", "-c", "bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
+# ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
+ENTRYPOINT ["/bin/bash", "-c", "bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
