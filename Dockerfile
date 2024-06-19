@@ -7,7 +7,7 @@ ENV TZ Asia/Shanghai
 WORKDIR /app
 
 # 复制本地文件到工作目录
-COPY . /app
+# COPY . /app
 
 # 更新系统并安装必要的软件包
 RUN apt-get update && \
@@ -21,5 +21,5 @@ EXPOSE 8080
 
 # 设置容器启动命令，执行 /app/main 脚本
 
-# ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
-ENTRYPOINT ["/bin/bash", "-c", "bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
+ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
+# ENTRYPOINT ["/bin/bash", "-c", "bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
