@@ -24,4 +24,6 @@ RUN chmod a+x /app/bin/unidbg-fetch-qsign
 EXPOSE 8080
 
 # 设置容器启动命令，执行 /app/main 脚本
-ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
+
+CMD ["/bin/bash", "-c", "/app/main & bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
+# ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
