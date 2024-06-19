@@ -1,5 +1,5 @@
 # 使用指定的基础镜像
-FROM openjdk:11-jre-slim
+FROM cikeyqi/unidbg-fetch-qsign-docker
 
 # 设置时区为 Asia/Shanghai
 ENV TZ Asia/Shanghai
@@ -19,11 +19,11 @@ RUN apt-get update && \
 
 # 赋予 main 可执行权限
 RUN chmod a+x main
-RUN chmod a+x /app/bin/unidbg-fetch-qsign
+# RUN chmod a+x /app/bin/unidbg-fetch-qsign
 # 暴露端口 8080（假设应用程序使用该端口）
 EXPOSE 8080
 
 # 设置容器启动命令，执行 /app/main 脚本
 
-CMD ["/bin/bash", "-c", "/app/main & bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
-# ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
+# CMD ["/bin/bash", "-c", "/app/main & bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
+ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
