@@ -22,5 +22,5 @@ EXPOSE 8080
 
 # 设置容器启动命令，执行 /app/main 脚本
 
-ENTRYPOINT ["/bin/bash", "-c", "bash /app/main"]
+ENTRYPOINT ["/bin/bash", "-c", "bash /srv/qsign/qsig/main"]
 # ENTRYPOINT ["/bin/bash", "-c", "bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION"]
