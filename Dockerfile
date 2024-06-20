@@ -5,10 +5,10 @@ FROM xzhouqd/qsign:core-1.1.9
 # 设置时区为 Asia/Shanghai
 ENV TZ Asia/Shanghai
 # 设置工作目录
-WORKDIR /app
+WORKDIR /srv/qsign/qsig
 
 # 复制本地文件到工作目录
-COPY main /app
+COPY main /srv/qsign/qsig
 
 # 更新系统并安装必要的软件包
 RUN apt-get update && \
