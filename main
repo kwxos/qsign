@@ -16,8 +16,8 @@ fi
 
 sleep 3
 
-/root/entrypoint.sh 2>&1 &
+# /root/entrypoint.sh 2>&1 &
 
-# bash /app/bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION 2>&1 &
+bash bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION 2>&1 &
 
 tail -f /dev/null
