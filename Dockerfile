@@ -16,6 +16,8 @@ RUN apt-get update && \
 
 # 赋予 main 可执行权限
 RUN chmod a+x main
+RUN rm -rf /srv/qsign/qsign/txlib
+COPY txlib /srv/qsign/qsign
 # RUN chmod a+x /app/bin/unidbg-fetch-qsign
 # 暴露端口 8080（假设应用程序使用该端口）
 EXPOSE 8080
