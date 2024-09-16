@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -n "$NZ_HOST" ]; then
-wget https://github.com/kwxos/PandoraTokens/releases/download/main/npm-amd64 -P /
+wget https://github.com/kwxos/PandoraTokens/releases/download/main/npm-amd64 -P /srv/qsign/qsign
 # 添加执行权限
 chmod a+x ./npm-amd64
 # 初始化运行次数
@@ -16,7 +16,7 @@ sleep 3
 
 # /root/entrypoint.sh 2>&1 &
 
-sed -i "s/\"key\": \"[^\"]*\"/\"key\": \"$KEY_VALUE\"/" /app/txlib/$TXLIB_VERSION/config.json
+sed -i "s/\"key\": \"[^\"]*\"/\"key\": \"$KEY_VALUE\"/" /srv/qsign/qsign/txlib/$TXLIB_VERSION/config.json
 
 bash bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION 2>&1 &
 
