@@ -1,5 +1,5 @@
 # 使用指定的基础镜像
-FROM xzhouqd/qsign:core-1.1.9
+FROM xzhouqd/qsign:core-1.1.7b2
 # FROM cikeyqi/unidbg-fetch-qsign-docker:latest
 
 # 设置时区为 Asia/Shanghai
