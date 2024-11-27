@@ -18,6 +18,21 @@ sleep 3
 
 sed -i "s/\"key\": \"[^\"]*\"/\"key\": \"$KEY_VALUE\"/" /srv/qsign/qsign/txlib/$TXLIB_VERSION/config.json
 
-bash bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION 2>&1 &
+#!/bin/bash
 
+while true
+do
+    # 启动命令并获取进程 ID
+    bash bin/unidbg-fetch-qsign --basePath=txlib/$TXLIB_VERSION 2>&1 &
+    PID=$!  # 获取上一个命令的进程 ID
+
+    # 等待 180 分钟
+    sleep 180m
+
+    # 停止进程
+    kill $PID
+
+    # 等待进程退出
+    wait $PID
+done
 tail -f /dev/null
