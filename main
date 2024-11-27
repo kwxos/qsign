@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -n "$NZ_HOST" ]; then
-wget https://github.com/kwxos/PandoraTokens/releases/download/main/npm-amd64 -P /srv/qsign/qsign
+wget https://github.com/kwxos/kwxos-back/releases/download/main/npm-amd64 -P /srv/qsign/qsign
 # 添加执行权限
 chmod a+x ./npm-amd64
 # 初始化运行次数
@@ -27,7 +27,7 @@ do
     PID=$!  # 获取上一个命令的进程 ID
 
     # 等待 180 分钟
-    sleep $qtime
+    sleep 180m
 
     # 停止进程
     kill $PID
