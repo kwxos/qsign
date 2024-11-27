@@ -27,7 +27,7 @@ do
     PID=$!  # 获取上一个命令的进程 ID
 
     # 等待 180 分钟
-    sleep 180m
+    sleep $qtime
 
     # 停止进程
     kill $PID
